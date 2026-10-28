@@ -37,3 +37,11 @@
   <img alt="Playwright" src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge" />
   <img alt="Google Apps Script" src="https://img.shields.io/badge/Google_Apps_Script-4285F4?style=for-the-badge&logo=googleappsscript&logoColor=white" />
 </p>
+
+## 🏅 Badges
+
+<p align="center">
+  <a href="https://github.com/quocviet-IT/virtual-universe-26/issues/12">
+    <img alt="Virtual Universe '26 badge: Congratulations @quocviet-IT" src="assets/virtual-universe-26-badge.gif" width="220" />
+  </a>
+</p>
