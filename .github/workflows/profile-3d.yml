@@ -15,24 +15,27 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v5
 
-      - name: Draw the 3D contribution calendar
-        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Draw the isometric calendar with the Contributions and Streaks panels
+        run: node scripts/contrib-card.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-          # Halloween colours, matching the snake; one file for light mode and one for dark mode
-          SETTING_JSON: .github/profile-3d.json
+          OUT_DIR: dist-3d
 
       # A branch of its own: the snake's publish step replaces everything on `output`
       - name: Publish the images to the output-3d branch
         uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output-3d
-          build_dir: profile-3d-contrib
+          build_dir: dist-3d
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
